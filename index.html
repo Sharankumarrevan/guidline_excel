@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CLMS Excel Upload Guidelines</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f4f7fb;
+            padding:20px;
+            color:#333;
+        }
+
+        .container{
+            max-width:1200px;
+            margin:auto;
+        }
+
+        .header{
+            background:linear-gradient(135deg,#1e3c72,#2a5298);
+            color:white;
+            padding:20px;
+            border-radius:15px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);
+            margin-bottom:20px;
+        }
+
+        .header h1{
+            font-size:30px;
+            margin-bottom:5px;
+        }
+
+        .header p{
+            font-size:15px;
+            line-height:1.4;
+        }
+
+        .section{
+            background:white;
+            padding:18px;
+            border-radius:15px;
+            margin-bottom:18px;
+            box-shadow:0 3px 8px rgba(0,0,0,0.08);
+        }
+
+        .section h2{
+            color:#1e3c72;
+            margin-bottom:12px;
+            border-left:6px solid #2a5298;
+            padding-left:12px;
+            font-size: 22px;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:15px;
+        }
+
+        table th{
+            background:#2a5298;
+            color:white;
+            padding:10px;
+            text-align:left;
+        }
+
+        table td{
+            padding:10px;
+            border-bottom:1px solid #ddd;
+        }
+
+        table tr:hover{
+            background:#f1f6ff;
+        }
+
+        .correct{
+            color:green;
+            font-weight:bold;
+        }
+
+        .wrong{
+            color:red;
+            font-weight:bold;
+        }
+
+        .important-box{
+            background:#fff4e5;
+            border-left:6px solid orange;
+            padding:12px;
+            border-radius:10px;
+            margin-top:15px;
+        }
+
+        .mandatory{
+            background:#ffeaea;
+            border-left:6px solid red;
+            padding:12px;
+            border-radius:10px;
+            margin-top:15px;
+        }
+
+        ul{
+            margin-left:20px;
+            line-height:1.6;
+        }
+
+        .footer{
+            text-align:center;
+            margin-top:20px;
+            color:#777;
+            font-size:14px;
+        }
+
+        @media(max-width:768px){
+
+            body{
+                padding:15px;
+            }
+
+            .header h1{
+                font-size:28px;
+            }
+
+            table{
+                font-size:14px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>CLMS Excel Upload Guidelines</h1>
+    </div>
+
+    <!-- BASIC FORMATTING -->
+    <div class="section">
+
+        <h2>📋 Basic Formatting Instructions</h2>
+
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Required Format</th>
+                <th>Correct Example</th>
+                <th>Incorrect Example</th>
+            </tr>
+
+            <tr>
+                <td>Date</td>
+                <td>yyyy-mm-dd (Cell format must be TEXT)</td>
+                <td class="correct">2025-08-20</td>
+                <td class="wrong">20/08/2025</td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>First letter should be capital</td>
+                <td class="correct">Male, Female</td>
+                <td class="wrong">male, FEMALE</td>
+            </tr>
+
+            <tr>
+                <td>Status</td>
+                <td>First letter should be capital</td>
+                <td class="correct">married, un-married</td>
+                <td class="wrong">unmarried</td>
+            </tr>
+
+            <tr>
+                <td>Blood Group</td>
+                <td>Use valid blood group format</td>
+                <td class="correct">A+, B+, O-, AB+</td>
+                <td class="wrong">A positive</td>
+            </tr>
+
+            <tr>
+                <td>Pincode</td>
+                <td>Must contain exactly 6 digits</td>
+                <td class="correct">560001</td>
+                <td class="wrong">56001</td>
+            </tr>
+
+            <tr>
+                <td>Aadhar Number</td>
+                <td>Must contain exactly 12 digits and should be unique</td>
+                <td class="correct">123456789012</td>
+                <td class="wrong">12345</td>
+            </tr>
+
+            <tr>
+                <td>Contractor Code</td>
+                <td>
+                    Only alphanumeric values allowed. 
+                    Special characters allowed: "_" and "-"
+                </td>
+                <td class="correct">CNT_001</td>
+                <td class="wrong">CNT@001</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- MANDATORY FIELDS -->
+    <div class="section">
+
+        <h2>⚠️ Mandatory Contractor Details</h2>
+
+        <div class="mandatory">
+            <strong>Important:</strong><br><br>
+
+            All <b>red-marked fields</b> in the Excel sheet are mandatory and
+            must be filled carefully while uploading contractor details.
+        </div>
+
+        <br>
+
+        <ul>
+            <li>
+                <b>CLMS:</b> Refer to 
+                <b>EXCEL_DOWNLOAD_TEMPLATE</b> from EXCEL_UPLOAD.
+            </li>
+
+            <li>
+                <b>HRIS:</b> Refer to 
+                <b>EXCEL_DOWNLOAD_TEMPLATE</b> from EXCEL_UPLOAD.
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- IMPORTANT NOTES -->
+    <div class="section">
+
+        <h2>📌 Important Notes</h2>
+
+        <div class="important-box">
+
+            <ul>
+                <li>Ensure all mandatory fields are filled before upload.</li>
+
+                <li>Avoid duplicate Aadhar numbers.</li>
+
+                <li>Do not use unsupported special characters.</li>
+
+                <li>Keep all date columns in TEXT format.</li>
+
+                <li>Incorrect formats may cause upload validation failures.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        CLMS & HRIS Upload Guidelines
+    </div>
+
+</div>
+
+</body>
+</html>
